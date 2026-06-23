@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pyrite Rent — peer-to-peer tool rental. Rent the gear you need from neighbours; lend out what's gathering dust." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pyrite.rent" />
+    <meta property="og:title" content="Pyrite Rent — rent tools from your neighbours." />
+    <meta property="og:description" content="Peer-to-peer tool rental. Rent the gear you need from neighbours; lend out what's gathering dust." />
+    <meta property="og:site_name" content="Pyrite Rent" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pyrite Rent — rent tools from your neighbours." />
+    <meta name="twitter:description" content="Peer-to-peer tool rental. Rent the gear you need from neighbours; lend out what's gathering dust." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Pyrite Rent — rent tools from your neighbours.</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // NFC cards/tags write bare /tools/<cardKeyHash> and /tag/<uid> URLs;
+      // rewrite into the hash router so a direct deep-link load resolves.
+      (function () {
+        var p = window.location.pathname;
+        if (p !== '/' && !window.location.hash) {
+          window.location.replace('/#' + p + window.location.search);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
